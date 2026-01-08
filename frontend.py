@@ -5,6 +5,8 @@ import PyPDF2
 from sentence_transformers import SentenceTransformer, util
 import pandas as pd
 
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+
 # ---------------- CONFIG ----------------
 USER_DB = "users.json"
 JD_FOLDER = "job_descriptions"
