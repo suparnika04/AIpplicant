@@ -1,3 +1,4 @@
+from google import genai
 import streamlit as st
 import os, json, hashlib, re
 import PyPDF2
@@ -32,6 +33,30 @@ GENERIC_JDS = {
     "Cybersecurity Analyst": "Experience in network security, penetration testing, incident response, and cybersecurity best practices.",
     "General Purpose": "Experienced professional with strong Python, SQL, Cloud, Data Analysis, ML, NLP, Git, Agile, project management, and visualization skills."
 }
+# ---------------- GEMINI CONFIG ----------------
+GEMINI_API_KEY = "AIzaSyCh5PgFF_4p3lpIkgGhtrWel_XDTLv6r04"
+
+client = genai.Client(api_key=GEMINI_API_KEY)
+
+def generate_resume_summary(resume_text):
+    try:
+        prompt = f"""
+        You are a professional resume writer.
+        Create a concise, impactful resume summary (3–4 lines) based on this resume:
+
+        {resume_text}
+        """
+
+        response = client.models.generate_content(
+            model="gemini-flash-latest",
+            contents=prompt
+        )
+
+        return response.text
+
+    except Exception as e:
+        return f"Error generating summary: {e}"
+
 
 # ---------------- HELPERS ----------------
 def load_users():
@@ -119,7 +144,7 @@ def display_dashboard_card(title, skills_score, soft_score, final_score, verdict
     """, unsafe_allow_html=True)
 
 # ---------------- STREAMLIT APP ----------------
-st.set_page_config(page_title="AIpplicant Resume Analyzer", page_icon="📄", layout="wide")
+st.set_page_config(page_title="SmartMatch Resume Analyzer", page_icon="📄", layout="wide")
 
 if "role" not in st.session_state: st.session_state["role"]=None
 if "authenticated" not in st.session_state: st.session_state["authenticated"]=False
@@ -141,7 +166,7 @@ with col_left:
         font-size:26px;
         font-weight:bold;
     ">
-        AIpplicant
+        SmartMatch
     </div>
     """, unsafe_allow_html=True)
 
@@ -245,3 +270,11 @@ else:
             verdict,color=get_verdict_color(final_score)
             display_dashboard_card(f"{resume_file.name} - {job_role}", skills_score, soft_score, final_score, verdict, color, missing_skills)
             st.info("💡 Analysis shows key missing skills for this role. Adjust your resume accordingly.")
+            # ---------- Gemini Resume Summary ----------
+            st.markdown("## ✨ AI Resume Summary (Gemini)")
+
+            if st.button("Generate Resume Summary"):
+                with st.spinner("Generating AI summary..."):
+                    summary = generate_resume_summary(resume_text)
+                    st.success("✅ Resume Summary Generated")
+                    st.text_area("📌 Suggested Resume Summary", summary, height=180)
