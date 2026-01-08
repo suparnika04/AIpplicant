@@ -34,7 +34,7 @@ GENERIC_JDS = {
     "General Purpose": "Experienced professional with strong Python, SQL, Cloud, Data Analysis, ML, NLP, Git, Agile, project management, and visualization skills."
 }
 # ---------------- GEMINI CONFIG ----------------
-GEMINI_API_KEY = "AIzaSyCh5PgFF_4p3lpIkgGhtrWel_XDTLv6r04"
+GEMINI_API_KEY = "PASTE_YOUR_API_KEY_HERE"
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
