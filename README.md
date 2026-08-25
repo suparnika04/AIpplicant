@@ -127,10 +127,15 @@ The application will open in your default web browser.
 🔮 FUTURE ENHANCEMENTS
 
 • Resume improvement suggestions
+
 • Advanced candidate analytics
+
 • Improved semantic resume-job matching
+
 • Job portal integration
+
 • Automated interview invitations
+
 • Enhanced authentication and user management
 
 👩‍💻 AUTHOR
