@@ -34,26 +34,33 @@ For Recruiters:
 
 Upload Job Description → Upload Candidate Resumes → Select Job Role → Resume Analysis → Candidate Ranking → Identify Best Candidates
 
-                    AIpplicant
-                        │
-             ┌──────────┴──────────┐
-             │                     │
-        Applicant              Recruiter
-             │                     │
-       Upload Resume       Upload Job Descriptions
-             │              + Candidate Resumes
-             │                     │
-       Select Job Role       Select Job Role
-             │                     │
-             └──────────┬──────────┘
-                        │
-                 Resume Analysis
-                        │
-             ┌──────────┴──────────┐
-             │                     │
-          ATS Score          Candidate Ranking
-             │                     │
-      Resume Summary       Best Candidates
+🔄 WORKFLOW
+
+                              AIpplicant
+                                  │
+                    ┌─────────────┴─────────────┐
+                    │                           │
+               👩‍💻 Applicant               👨‍💼 Recruiter
+                    │                           │
+              Upload Resume             Upload Job Description
+                    │                           │
+             Enter Job Role             Upload Candidate Resumes
+                    │                           │
+                    └─────────────┬─────────────┘
+                                  │
+                           Resume Analysis
+                                  │
+                    ┌─────────────┴─────────────┐
+                    │                           │
+               ATS Analysis              Candidate Matching
+                    │                           │
+              ATS Score                  Candidate Ranking
+                    │                           │
+             Resume Summary            Best Candidates
+                    │                           │
+                    └─────────────┬─────────────┘
+                                  │
+                         Smarter Recruitment
 
 🎯 OBJECTIVE
 
@@ -80,6 +87,42 @@ For Recruiters:
 • Rank candidates based on job requirements
 • Identify relevant candidates quickly
 • Reduce manual resume screening effort
+
+⚙️ INSTALLATION & SETUP
+
+1. Clone the Repository
+
+git clone https://github.com/suparnika04/AIpplicant.git
+
+2. Navigate to the Project Directory
+
+cd AIpplicant
+
+3. Create a Virtual Environment
+
+python -m venv venv
+
+4. Activate the Virtual Environment
+
+For Windows:
+
+venv\Scripts\activate
+
+For macOS/Linux:
+
+source venv/bin/activate
+
+5. Install the Required Dependencies
+
+pip install -r requirements.txt
+
+▶️ RUN THE APPLICATION
+
+Start the application using:
+
+streamlit run frontend.py
+
+The application will open in your default web browser.
 
 🔮 FUTURE ENHANCEMENTS
 
