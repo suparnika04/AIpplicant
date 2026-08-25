@@ -75,17 +75,25 @@ For recruiters, AIpplicant reduces the effort required for manually screening mu
 For Students and Job Seekers:
 
 • Evaluate resume compatibility before applying for a job
+
 • Check ATS compatibility
+
 • Understand resume strengths
+
 • Match resumes with specific job roles
+
 • Get a quick summary of their resume
 
 For Recruiters:
 
 • Screen multiple resumes efficiently
+
 • Compare candidates for a specific role
+
 • Rank candidates based on job requirements
+
 • Identify relevant candidates quickly
+
 • Reduce manual resume screening effort
 
 ⚙️ INSTALLATION & SETUP
