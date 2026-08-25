@@ -92,41 +92,40 @@ For Recruiters:
 
 1. Clone the Repository
 
-git clone https://github.com/suparnika04/AIpplicant.git
+       git clone https://github.com/suparnika04/AIpplicant.git
 
 2. Navigate to the Project Directory
 
-cd AIpplicant
+       cd AIpplicant
 
 3. Create a Virtual Environment
 
-python -m venv venv
+       python -m venv venv
 
 4. Activate the Virtual Environment
 
 For Windows:
 
-venv\Scripts\activate
+       venv\Scripts\activate
 
 For macOS/Linux:
 
-source venv/bin/activate
+       source venv/bin/activate
 
 5. Install the Required Dependencies
 
-pip install -r requirements.txt
+       pip install -r requirements.txt
 
 ▶️ RUN THE APPLICATION
 
 Start the application using:
 
-streamlit run frontend.py
+       streamlit run frontend.py
 
 The application will open in your default web browser.
 
 🔮 FUTURE ENHANCEMENTS
 
-• Skill-gap recommendations
 • Resume improvement suggestions
 • Advanced candidate analytics
 • Improved semantic resume-job matching
